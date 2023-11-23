@@ -16,7 +16,7 @@
             <div class="form-group"> 
   
               <label class="control-label" for="username" style="color: white;"> Usuario </label> 
-              <input type="text" name="username" class="form-control" ngModel /> 
+              <input type="text" name="username" class="form-control" [(ngModel)]="usuario.username" /> 
   
             </div> 
           </div> 
@@ -24,7 +24,7 @@
             <div class="form-group"> 
   
               <label class="control-label" for="password" style="color: white;"> Password </label> 
-              <input type="password" name="password" class="form-control" ngModel /> 
+              <input type="password" name="password" class="form-control" [(ngModel)]="usuario.password" /> 
   
             </div> 
           </div> 

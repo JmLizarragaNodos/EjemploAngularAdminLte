@@ -75,9 +75,11 @@ export class AppComponent
 
   ngOnInit() 
   { 
+    //console.log("token", this.servicioSesion.obtenerToken());
+
     if (this.servicioSesion.obtenerToken() != null) {
       this.autorizadoEntrar = true; 
-    }     
+    }   
 	} 
 
   ngAfterViewInit()
@@ -111,76 +113,54 @@ export class AppComponent
 
       // console.log("directorioAgrupador", this.directorioAgrupador);
       // console.log("rutaActual", this.rutaActual);
-      console.log("autorizadoEntrar: " + this.autorizadoEntrar);
+      // console.log("autorizadoEntrar: " + this.autorizadoEntrar);
     });
   }
 
-  redirigirComponente(routerLink: string) 
-  {
-    this.router.navigate([`/${routerLink}`]);
-  }
+  // redirigirComponente(routerLink: string) 
+  // {
+  //   this.router.navigate([`/${routerLink}`]);
+  // }
 
   loguearse(jsonDatosForm:any) 
   {
-    let datos: any = {
-      token: "dfsdfsfsfhhhhhhhhhhhh",
-      expiration: "0",
-      idUsuario: "1"
-    };
-
-    //console.log("datos", datos);
-    this.autorizadoEntrar = true; 
-
-    //===================================================>>>>
-    let datosSesion: any = {};
-    //datosSesion[this.config.nombreIdUsuarioAutenticado] = datos.idUsuario;
-    datosSesion[this.config.nombreToken] = datos.token;
-    datosSesion[this.config.nombreTiempoExpiracionToken] = datos.expiration;
-
-    localStorage.setItem(this.config.nombreVariableSesion, JSON.stringify(datosSesion));
-
-    //===================================================>>>>
-
-    // //localStorage.setItem(this.config.nombreIdUsuarioAutenticado, datos.idUsuario);
-    // localStorage.setItem(this.config.nombreToken, datos.token);
-    // localStorage.setItem(this.config.nombreTiempoExpiracionToken, datos.expiration);   // Expiracion del token
-
-    //this.router.navigate(["/composicionMusical/crearEditar"]);
-    this.router.navigate([this.config.rutaLoginRealizado]);
-
-
-    /*
     if (jsonDatosForm.username == "" || jsonDatosForm.password == "")
     {
       alert("Usuario o clave incompletos");
     }
     else
     {
-      //this.funciones.mostrarLoadingSpinner();
+      //===============================================================>>>>>
+      // ENTRAR SIN LLAMAR AL BACKEND:
 
+      this.autorizadoEntrar = true; 
+
+      //var exp = Date.now() + 5000; // 5000 milisegundos (5 segundos)
+      var exp = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 horas en milisegundos
+
+      let datosSesion: any = {};
+      datosSesion[this.config.nombreToken] = "dfsdfsfsfhhhhhhhhhhhh";
+      datosSesion[this.config.nombreTiempoExpiracionToken] = exp;
+
+      localStorage.setItem(this.config.nombreVariableSesion, JSON.stringify(datosSesion));
+      this.router.navigate([this.config.rutaLoginRealizado]);
+
+      //===============================================================>>>>>
+
+      /*
       this.http.post(this.url + "/login", JSON.stringify(jsonDatosForm), {headers: {"Content-Type": "application/json"}})
-      //.pipe( finalize(() => { this.funciones.ocultarLoadingSpinner() }))
       .subscribe(
-        (datos:any) => {
-
+        (datos:any) => 
+        {
           //console.log("datos", datos);
           this.autorizadoEntrar = true; 
 
-          //===================================================>>>>
           let datosSesion: any = {};
-          //datosSesion[this.config.nombreIdUsuarioAutenticado] = datos.idUsuario;
+
           datosSesion[this.config.nombreToken] = datos.token;
           datosSesion[this.config.nombreTiempoExpiracionToken] = datos.expiration;
-
           localStorage.setItem(this.config.nombreVariableSesion, JSON.stringify(datosSesion));
 
-          //===================================================>>>>
-
-          // //localStorage.setItem(this.config.nombreIdUsuarioAutenticado, datos.idUsuario);
-          // localStorage.setItem(this.config.nombreToken, datos.token);
-          // localStorage.setItem(this.config.nombreTiempoExpiracionToken, datos.expiration);   // Expiracion del token
-      
-          //this.router.navigate(["/composicionMusical/crearEditar"]);
           this.router.navigate([this.config.rutaLoginRealizado]);
         },
         (excepcion) => {
@@ -188,13 +168,15 @@ export class AppComponent
           alert(excepcion.error.message);
         }
       );
+      */
     }
-    */
+    
   }
 
   salirSistema(evento:any)    
   {
-    evento.preventDefault();
+    if (evento != null)
+      evento.preventDefault();
 
     localStorage.removeItem(this.config.nombreVariableSesion);
     this.autorizadoEntrar = false; 
