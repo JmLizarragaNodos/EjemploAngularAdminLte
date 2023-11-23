@@ -56,7 +56,7 @@
   <aside [style.display]="autorizadoEntrar && rutaActual != 'login' ? 'block' : 'none'" class="main-sidebar sidebar-dark-primary elevation-4"> <!-- Main Sidebar Container -->
 
     <a href="javascript:;" class="brand-link"> <!-- Brand Logo -->
-      <img src="/assets/AdminLTE/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+      <img src="assets/AdminLTE/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
         class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light"> AppPrueba </span>
     </a>
@@ -72,7 +72,7 @@
 
               <a routerLink="{{x.path}}" class="nav-link {{x.path == rutaActual ? 'active' : ''}}" >
                 <i class="nav-icon {{x.icono}}"></i>
-                <p>{{x.descripcion}}</p>
+                <p>{{x.title}}</p>
               </a>
             </li>
             <ng-container *ngIf="x.children != null && x.children.length > 0">
@@ -80,7 +80,7 @@
               <li class="nav-item {{x.path == directorioAgrupador ? 'menu-open' : ''}}">
                 <a href="javascript:;" class="nav-link {{x.path == directorioAgrupador ? 'active' : ''}}">
                   <i class="nav-icon fas fa-search"></i>
-                  <p>{{x.descripcion}}<i class="fas fa-angle-left right"></i> </p>
+                  <p>{{x.title}}<i class="fas fa-angle-left right"></i> </p>
                 </a>
 
                 <ul class="nav nav-treeview" [style.display]="x.path == directorioAgrupador ? 'block' : 'none'">
@@ -90,7 +90,7 @@
                     <li class="nav-item">
                       <a [attr.link]="y.path" routerLink="{{x.path}}/{{y.path}}" class="nav-link {{y.path == rutaActual ? 'active' : ''}}" style="cursor: pointer">
                         <i class="nav-icon {{y.icono}}"></i>
-                        <p>{{y.descripcion}}</p>
+                        <p>{{y.title}}</p>
                       </a>
                     </li>
                     

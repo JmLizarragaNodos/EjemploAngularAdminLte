@@ -11,17 +11,18 @@ import { AuthGuardService } from './Servicios/auth-guard.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'marca', component: MarcaComponent, canActivate: [AuthGuardService] },
-  { path: 'producto', component: ProductoComponent, canActivate: [AuthGuardService] },
+  { path: 'marca', component: MarcaComponent, title: "Marcas", canActivate: [AuthGuardService] },
+  { path: 'producto', component: ProductoComponent, title: "Productos", canActivate: [AuthGuardService] },
   {
     path: "personas",
+    title: "Personas",
     children: [
-      { path: "usuario", component: UsuarioComponent, canActivate: [AuthGuardService] },
-      { path: "cliente", component: ClienteComponent, canActivate: [AuthGuardService] },
+      { path: "usuario", component: UsuarioComponent, title: "Usuarios", canActivate: [AuthGuardService] },
+      { path: "cliente", component: ClienteComponent, title: "Clientes", canActivate: [AuthGuardService] },
     ]
   },
-  { path: 'venta', component: VentaComponent, canActivate: [AuthGuardService] },
-  { path: 'saldoInventario', component: SaldoInventarioComponent, canActivate: [AuthGuardService] },
+  { path: 'venta', component: VentaComponent, title: "Ventas", canActivate: [AuthGuardService] },
+  { path: 'saldoInventario', component: SaldoInventarioComponent, title: "Saldo Inventario", canActivate: [AuthGuardService] },
 
 
   { path: '**', redirectTo: 'login', pathMatch: 'full' }   // Con cualquier ruta desconocida te redirige al login

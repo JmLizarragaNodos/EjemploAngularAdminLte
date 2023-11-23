@@ -28,4 +28,51 @@
 	ng generate service Servicios/Sesion
 	ng generate service Servicios/AuthGuard
 	ng generate service Servicios/AuthInterceptor
+	
+Publicar:
+	ng build --output-hashing none
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+Corregir error al publicar:	
+Error: bundle initial exceeded maximum budget. Budget 1.00 MB was not met by 783.06 kB with a total of 1.76 MB.
+
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ],
 

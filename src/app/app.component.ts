@@ -1,7 +1,7 @@
 //import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Route, Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
 import { ConfiguracionesProyectoService } from './Configuraciones/configuraciones-proyecto.service';
 //import { FuncionesGlobalesService } from './Servicios/funciones-globales.service';
@@ -10,15 +10,10 @@ import {filter} from 'rxjs/operators';
 
 export class ItemMenu
 {
-  public path : string;
-  public descripcion : string;
+  public path? : string;
+  public title? : any;
   public icono? : string;
-  public children? : Array<ItemMenu>;
-
-  constructor() {
-    this.path = "";
-    this.descripcion = "";
-  }
+  public children? : Array<any>;
 }
 
 
@@ -45,32 +40,36 @@ export class AppComponent
   {
     this.url = config.rutaWebApi;
 
-    this.arreglo = [
-      { path: "marca", descripcion: "Marcas", icono: "fas fa-book" },
-      { path: "producto", descripcion: "Productos", icono: "far fa-image" },
-      { 
-        path: "personas", 
-        descripcion: "Personas",
-        children: [
-          { path: "usuario", descripcion: "Usuarios", icono: "fas fa-circle" },
-          { path: "cliente", descripcion: "Clientes", icono: "fas fa-circle" },
-        ]
-      },
-      // { 
-      //   path: "contabilidad", 
-      //   descripcion: "Contabilidad",
-      //   children: [
-      //     { path: "planCuenta", descripcion: "Planes de Cuenta", icono: "fas fa-edit" },               
-      //     { path: "planCuentaDummy", descripcion: "Planes de Cuenta Dummy", icono: "far fa-circle" },
-      //     { path: "planCuentaAcordeon", descripcion: "Planes de Cuenta Acordeón", icono: "fas fa-edit" },
-      //     { path: "balanceGeneralDummy", descripcion: "Balance General Dummy", icono: "far fa-circle" },
-      //     { path: "estadoDeResultadoDummy", descripcion: "Estado de Resultado Dummy", icono: "far fa-circle" },
-      //     { path: "asientoContableDummy", descripcion: "Asiento Contable Dummy", icono: "far fa-circle" },
-      //   ]
-      // },
-      { path: "venta", descripcion: "Ventas", icono: "far fa-circle text-info" },
-      { path: "saldoInventario", descripcion: "Saldo Inventario", icono: "fas fa-edit" }
-    ];
+    this.arreglo = this.router.config.filter(x => x.title != null).map(x => 
+    {
+      return {
+        path: x.path,
+        title: x.title,
+        icono: this.obtenerIcono(x),
+        children: x.children?.map(y => 
+        {
+          return {
+            path: y.path,
+            title: y.title,
+            icono: this.obtenerIcono(y),
+          };
+        })
+      };
+    });
+  }
+
+  obtenerIcono(ruta: Route) : string
+  {
+    let path = ruta.path;
+
+    if (path == "marca") return "fas fa-book";
+    else if (path == "producto") return "far fa-image";
+    else if (path == "usuario") return "fas fa-circle";
+    else if (path == "cliente") return "fas fa-circle";
+    else if (path == "venta") return "far fa-circle text-info";
+    else if (path == "saldoInventario") return "fas fa-edit";
+    else 
+      return "fas fa-circle";
   }
 
   ngOnInit() 

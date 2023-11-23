@@ -11,7 +11,7 @@ export class UsuarioFicticio
 
   constructor() {
     this.username = "hola@gmail.com";
-    this.password = "123456";
+    this.password = "abcd@Prueba_123456";
   }
 }
 
