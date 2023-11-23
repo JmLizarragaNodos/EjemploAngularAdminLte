@@ -1,0 +1,27 @@
+- Desinstalar Angular Antiguo 
+	npm uninstall -g @angular/cli
+	
+- Instalar Angular 15:	
+	npm install -g @angular/cli@15
+	
+- Crear proyecto:
+	cd C:\Users\josel\Documents\Nodos\Respaldos Git
+	ng new EjemploAngularAdminLte
+		//Cuando pregunte "Would you like to add Angular routing? (y/N)"  Poner Si(y)
+		// Cuando pregunte "Which stylesheet format would you like to use? (Use arrow keys)" Solo apretar enter 
+		
+- Crear componentes:		
+	ng generate component Componentes/Login
+	ng generate component Componentes/Venta
+	ng generate component Componentes/SaldoInventario
+	ng generate component Componentes/Producto
+	ng generate component Componentes/Marca
+	
+	ng generate component Componentes/Personas/Cliente
+	ng generate component Componentes/Personas/Usuario
+	
+- Crear Servicios:
+	ng generate service Configuraciones/ConfiguracionesProyecto
+	
+	ng generate service Servicios/Sesion
+

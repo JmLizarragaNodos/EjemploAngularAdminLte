@@ -1,0 +1,39 @@
+.tabla-colapsar-items .invisible { display: none; }
+
+.tabla-colapsar-items span { cursor: pointer; }
+
+.tabla-colapsar-items {
+  /* width:100%; */
+  min-width: 40%;
+  border-collapse: collapse;
+}
+
+.tabla-colapsar-items th, td {
+  border: 1px solid rgb(104, 103, 103);
+}
+
+.tabla-colapsar-items td {
+  padding: 5px;
+}
+
+.tabla-colapsar-items th {
+  /* white-space: nowrap; */    /* Impide que haga un salto de linea  */
+  padding: 3px;
+}
+
+.tabla-colapsar-items thead {
+  background-color: gray; color: white;
+}
+
+.tabla-colapsar-items .columna-acciones { width: 20%; }
+
+.tabla-colapsar-items .icono-colapsar {
+    font-weight: bold;
+    /* font-size: 1.4em; */
+    display: inline-block;
+    background-color: lightblue;
+    width: 27px;
+    text-align: center;
+    border-radius: 50px 50px;
+    height: 27px;
+}

@@ -1,0 +1,26 @@
+
+/* Altura select2 de un solo option */
+.select2-container .select2-selection--single {
+    height: 38px;
+}
+
+/* Altura select2 multiple */
+.select2-container .select2-selection--multiple {
+    min-height: 38px;
+}
+
+/* Altura texto placeholder */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 34px;
+}
+
+/* Posicionar Flecha a una altura media en un select2 de un solo option */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 36px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 20px;
+}
+
