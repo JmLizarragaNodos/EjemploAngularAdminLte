@@ -5,7 +5,6 @@
 	npm install -g @angular/cli@15
 	
 - Crear proyecto:
-	cd C:\Users\josel\Documents\Nodos\Respaldos Git
 	ng new EjemploAngularAdminLte
 		//Cuando pregunte "Would you like to add Angular routing? (y/N)"  Poner Si(y)
 		// Cuando pregunte "Which stylesheet format would you like to use? (Use arrow keys)" Solo apretar enter 
