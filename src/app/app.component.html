@@ -1,38 +1,4 @@
-<style>
-
-  body {
-    background-image: url('/assets/images/FondoLogin.jpg');
-  }
-
-  /* Imagen de carga de datos */
-
-  #loading-spinner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
-    border: 16px solid #f3f3f3;
-    border-top: 16px solid #3498db;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-</style>
-
-<div style="display: none" id="loading-spinner"></div>
-
+<!-- <div style="display: none" id="loading-spinner"></div> -->
 
 <div [class.wrapper] = "autorizadoEntrar">
 
@@ -106,116 +72,6 @@
         </ul>
       </nav>
 
-      <!-- 
-      <nav class="mt-2"> 
-
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
-          <li class="nav-item">
-            <a routerLink="marca" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p> Marcas </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="producto" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
-              <p> Productos </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-search"></i>
-              <p> Personas <i class="fas fa-angle-left right"></i> </p>
-            </a>
-            <ul class="nav nav-treeview" style="display: none;">
-              <li class="nav-item">
-                <a routerLink="personas/usuario" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Usuarios</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a routerLink="personas/cliente" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Clientes</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-search"></i>
-              <p> Contabilidad <i class="fas fa-angle-left right"></i> </p>
-            </a>
-            <ul class="nav nav-treeview" style="display: none;">
-    
-              <li class="nav-item">
-                <a routerLink="contabilidad/planCuenta" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Planes de Cuenta</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a routerLink="contabilidad/planCuentaDummy" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Planes de Cuenta Dummy</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a routerLink="contabilidad/planCuentaAcordeon" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Planes de Cuenta Acordeón</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a routerLink="contabilidad/balanceGeneralDummy" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Balance General Dummy</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a routerLink="contabilidad/estadoDeResultadoDummy" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Estado de Resultado Dummy</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a routerLink="contabilidad/asientoContableDummy" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Asiento Contable Dummy</p>
-                </a>
-              </li>
-            
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a routerLink="venta" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>Ventas</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="saldoInventario" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>Saldo Inventario</p>
-            </a>
-          </li>
-
-          <li class="nav-header">Operaciones</li>
-          <li class="nav-item">
-            <a (click)="salirSistema($event)" class="nav-link">
-              <i class="nav-icon fas fa-file"></i>
-              <p>Cerrar Sesión</p>
-            </a>
-          </li>
-
-        </ul>
-      </nav> 
-      -->
-
     </div>
 
   </aside>
@@ -227,59 +83,11 @@
 
     <section [class.content] = "autorizadoEntrar">
       <div [class.container-fluid] = "autorizadoEntrar">
-        <!-- =================================================== CAMBIADO =================================================== -->
-        
-        <!--
-        <nav class="navbar navbar-expand navbar-dark bg-dark">
-          <a href="#" class="navbar-brand" style="padding-left: 2em;"> AppPrueba </a>
-          <div class="navbar-nav mr-auto" style="padding-left: 10em;">
-            <ul *ngIf="! autorizadoEntrar" class="nav navbar-nav navbar-right">
-              <li class="nav-item">
-                <a routerLink="login" class="nav-link">Login</a>
-              </li>
-            </ul>
-            <ul *ngIf="autorizadoEntrar" class="nav navbar-nav navbar-right">
 
-              <li class="nav-item"> <a routerLink="marca" class="nav-link"> Marcas </a> </li>
-              <li class="nav-item"> <a routerLink="producto" class="nav-link"> Productos </a> </li>
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Personas
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" routerLink="personas/usuario">Usuarios</a>
-                  <a class="dropdown-item" routerLink="personas/cliente">Clientes</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Contabilidad
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" routerLink="contabilidad/planCuenta">Planes de Cuenta</a>
-                  <a class="dropdown-item" routerLink="contabilidad/planCuentaDummy">Planes de Cuenta Dummy</a>
-                  <a class="dropdown-item" routerLink="contabilidad/planCuentaAcordeon">Planes de Cuenta Acordeón</a>
-                  <a class="dropdown-item" routerLink="contabilidad/balanceGeneralDummy">Balance General Dummy</a>
-                  <a class="dropdown-item" routerLink="contabilidad/estadoDeResultadoDummy">Estado de Resultado Dummy</a>
-                  <a class="dropdown-item" routerLink="contabilidad/asientoContableDummy">Asiento Contable Dummy</a>
-                </div>
-              </li>
-              <li class="nav-item"> <a routerLink="venta" class="nav-link"> Ventas </a> </li>
-              <li class="nav-item"> <a routerLink="saldoInventario" class="nav-link"> Saldo Inventario </a> </li>
-              <li> <a href="#" (click)="salirSistema($event)" class="nav-link"> Cerrar Sesion </a> </li>
-            </ul>
-          </div>
-        </nav>
-        -->
-        <!-- <img *ngIf="!autorizadoEntrar" src="/assets/images/FondoLogin.jpg" width="100%"> -->
-
-        <div [class.container-fluid] = "autorizadoEntrar" style="padding: 4em;">
+        <div [class.container-fluid] = "autorizadoEntrar">
           <router-outlet></router-outlet>
         </div>
 
-        <!-- =================================================== CAMBIADO =================================================== -->
       </div>
     </section>
 
