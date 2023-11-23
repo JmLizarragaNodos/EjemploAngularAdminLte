@@ -1,3 +1,6 @@
+- Ver sitio web:
+	https://jmlizarraganodos.github.io/EjemploAngularAdminLte/index.html
+	
 - Desinstalar Angular Antiguo 
 	npm uninstall -g @angular/cli
 	
@@ -23,4 +26,6 @@
 	ng generate service Configuraciones/ConfiguracionesProyecto
 	
 	ng generate service Servicios/Sesion
+	ng generate service Servicios/AuthGuard
+	ng generate service Servicios/AuthInterceptor
 

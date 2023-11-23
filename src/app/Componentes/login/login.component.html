@@ -1,1 +1,52 @@
-<p>login works!</p>
+
+
+<!-- <div style="position: fixed;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);"> -->
+
+  <!-- div style="background-image: url('/assets/images/FondoLogin.jpg');"> -->
+  <div>
+
+    <!-- <div style="background-color: lightgray;"> -->
+    <div style="width: 100%;padding: 2em;">
+      <form (ngSubmit)="loguearse($event, formLogin);" #formLogin="ngForm">
+  
+        <br/><br/>
+  
+        <div class="row"> 
+          <div class="col-md-2"> 
+            <div class="form-group"> 
+  
+              <label class="control-label" for="username" style="color: white;"> Usuario </label> 
+              <input type="text" name="username" class="form-control" ngModel /> 
+  
+            </div> 
+          </div> 
+          <div class="col-md-2"> 
+            <div class="form-group"> 
+  
+              <label class="control-label" for="password" style="color: white;"> Password </label> 
+              <input type="password" name="password" class="form-control" ngModel /> 
+  
+            </div> 
+          </div> 
+          <div class="col-md-12">
+  
+            <div class="form-group">  
+  
+              <br/>
+              <button class="btn btn-success "> Entrar </button>
+  
+            </div>
+  
+          </div>
+        </div> 
+  
+      </form>  
+    </div>
+  
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    
+  
+  
+  </div>
+  

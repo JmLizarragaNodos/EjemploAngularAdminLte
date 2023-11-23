@@ -209,7 +209,6 @@ function selectBuscador(datos)
 
 						if (optionInicialEncontrado != null && optionInicialEncontrado.value == "")   // Si existe un option inicial. Ej: opcion "todos"
 						{  
-							//console.log("babu rica 1"); 
 							//select.appendChild(optionInicial);          // Coloca el option inicial al comienzo
 							select.appendChild(optionInicialEncontrado);  // Coloca el option inicial al comienzo
 
@@ -218,7 +217,6 @@ function selectBuscador(datos)
 						}
 						if (optionSeleccionado.value != "")   // Si se encontro un option seleccionado y no es el option por default   ...NUEVO OK
 						{
-							//console.log("babu rica 2");
 							select.appendChild(optionSeleccionado);     // Agrega el option que estaba seleccionado antes
 							select.scrollTo(0, 0);                      // Coloca el scroll del select en la posicion inicial         scrollTo(eje-horizontal, eje-vertical)
 						}
@@ -374,8 +372,6 @@ function selectBuscador(datos)
 			select.setAttribute("estaCompleto", "false");  // Habilita uso del scroll
 		
 			if (event.target.value != null && event.target.value != "") {  
-	
-				//event.target.value = "babuuuuu";
 	
 				busqueda = event.target.value;    // Agrega la busqueda
 	

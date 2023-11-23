@@ -25,9 +25,30 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/AdminLTE/plugins/jquery-ui/jquery-ui.min.css",
+              "src/assets/AdminLTE/plugins/fontawesome-free/css/all.min.css",
+              "src/assets/AdminLTE/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css",
+              "src/assets/AdminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css",
+              "src/assets/AdminLTE/dist/css/adminlte.min.css",
+              "src/assets/AdminLTE/plugins/daterangepicker/daterangepicker.css",
+
+              "src/assets/css/estilos.css",
+              "src/assets/css/select2.min.css",
+              "src/assets/css/select2-estilos.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/AdminLTE/plugins/jquery/jquery.min.js",
+              "src/assets/AdminLTE/plugins/jquery-ui/jquery-ui.min.js",
+              "src/assets/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/AdminLTE/plugins/moment/moment.min.js",
+              "src/assets/AdminLTE/plugins/daterangepicker/daterangepicker.js",
+              "src/assets/AdminLTE/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js",
+              "src/assets/AdminLTE/dist/js/adminlte.js",
+              "src/assets/AdminLTE/dist/js/demo.js",
+
+              "src/assets/js/buscadorPaginado.js",
+              "src/assets/js/select2.min.js"
+            ]
           },
           "configurations": {
             "production": {
